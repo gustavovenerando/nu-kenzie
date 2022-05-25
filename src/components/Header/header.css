@@ -1,0 +1,17 @@
+.header_container {
+	width: 900px;
+	height: 88px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header_container > img {
+	height: 19.5260009765625px;
+	width: 122.67755126953125px;
+}
+
+.header_container > button {
+	height: 40px;
+	width: 64px;
+}
