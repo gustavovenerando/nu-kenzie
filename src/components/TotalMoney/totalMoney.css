@@ -1,0 +1,36 @@
+.total_money_conteiner {
+	width: 363px;
+	height: 96px;
+	background: #ffffff;
+	border: 1px solid #e9ecef;
+	border-radius: 4px;
+	padding: 20px 24px 18px 24px;
+}
+
+.total_value_container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.total_value_container > h2 {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 30px;
+	color: #212529;
+}
+
+.total_value_container > p {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 30px;
+	color: #fd377e;
+}
+
+.total_money_conteiner > p {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	color: #5b6166;
+	text-align: left;
+}
