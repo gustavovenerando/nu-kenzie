@@ -6,6 +6,7 @@ function Form(props) {
 	const [inputDescription, setInputDescription] = useState("");
 	const [inputValue, setInputValue] = useState("");
 	const [inputType, setInputType] = useState("");
+	const [contId, setContId] = useState(0);
 
 	const handleEventClick = (event) => {
 		event.preventDefault();
@@ -13,11 +14,16 @@ function Form(props) {
 		props.setListTransactions([
 			...props.listTransactions,
 			{
+				transactionId: contId,
 				description: inputDescription,
-				value: inputType === "entrada" ? inputValue : -inputValue,
+				value: inputType === "Entrada" ? inputValue : -inputValue,
 				type: inputType,
 			},
 		]);
+
+		setContId(contId + 1);
+
+		console.log(props.listTransactions);
 	};
 
 	return (
@@ -44,8 +50,8 @@ function Form(props) {
 						onChange={(event) => setInputType(event.target.value)}
 					>
 						<option value="empty"></option>
-						<option value="entrada">Entrada</option>
-						<option value="despesa">Despesa</option>
+						<option value="Entrada">Entrada</option>
+						<option value="Despesa">Despesa</option>
 					</select>
 				</div>
 			</div>
