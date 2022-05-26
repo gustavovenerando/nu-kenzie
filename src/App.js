@@ -7,6 +7,11 @@ import TotalMoney from "./components/TotalMoney/TotalMoney.js";
 import List from "./components/List/List.js";
 
 function App() {
+	const [listTransactions, setListTransactions] = useState([
+		{ description: "Salário recebido", type: "entrada", value: 2500 },
+		{ description: "Conta de luz", type: "saída", value: -150 },
+	]);
+
 	return (
 		<div className="App">
 			<header>
@@ -14,11 +19,14 @@ function App() {
 			</header>
 			<main>
 				<div className="main_general_info">
-					<Form />
-					<TotalMoney />
+					<Form
+						listTransactions={listTransactions}
+						setListTransactions={setListTransactions}
+					/>
+					<TotalMoney listTransactions={listTransactions} />
 				</div>
 
-				<List />
+				<List listTransactions={listTransactions} />
 			</main>
 		</div>
 	);

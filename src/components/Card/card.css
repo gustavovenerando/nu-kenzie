@@ -7,8 +7,15 @@
 
 .card_color {
 	width: 4px;
-	background: #03b898;
 	border-radius: 4px 0px 0px 4px;
+}
+
+.green {
+	background: #03b898;
+}
+
+.red {
+	background: rgb(199, 63, 28);
 }
 
 .card_content {

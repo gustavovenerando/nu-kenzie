@@ -3,7 +3,7 @@ import "../../reset.css";
 import "./list.css";
 import Card from "../Card/Card.js";
 
-function List() {
+function List(props) {
 	return (
 		<div className="list_conteiner">
 			<div className="list_header">
@@ -21,33 +21,14 @@ function List() {
 				</ul>
 			</div>
 			<ul className="card_conteiner">
-				<Card />
-				{/* <li>
-					<div className="card_color"></div>
-					<div className="card_content">
-						<div className="card_description">
-							<h2>Salário - Mes Dezembro</h2>
-							<p>Entrada</p>
-						</div>
-						<p>R$ 6.660,00</p>
-						<button>
-							<img src={imagem} />
-						</button>
-					</div>
-				</li>
-				<li>
-					<div className="card_color"></div>
-					<div className="card_content">
-						<div className="card_description">
-							<h2>Salário - Mes Dezembro</h2>
-							<p>Entrada</p>
-						</div>
-						<p>R$ 6.660,00</p>
-						<button>
-							<img src={imagem} />
-						</button>
-					</div>
-				</li> */}
+				{props.listTransactions.map((card, index) => (
+					<Card
+						description={card.description}
+						type={card.type}
+						value={card.value}
+						key={index}
+					/>
+				))}
 			</ul>
 		</div>
 	);
