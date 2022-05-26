@@ -4,10 +4,6 @@ import "./card.css";
 
 function Card(props) {
 	let cardColor = props.type.toLowerCase() === "entrada" ? "green" : "red";
-	let cardValue =
-		props.type.toLowerCase() === "entrada"
-			? Number(props.value)
-			: -Number(props.value);
 
 	return (
 		<li className="li_card_conteiner">
@@ -17,7 +13,7 @@ function Card(props) {
 					<h2>{props.description}</h2>
 					<p>{props.type}</p>
 				</div>
-				<p>R$ {cardValue.toFixed(2)}</p>
+				<p>R$ {Number(props.value).toFixed(2)}</p>
 				<button>
 					<img src={imagem} />
 				</button>

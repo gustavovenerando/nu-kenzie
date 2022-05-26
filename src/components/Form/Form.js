@@ -14,7 +14,7 @@ function Form(props) {
 			...props.listTransactions,
 			{
 				description: inputDescription,
-				value: inputValue,
+				value: inputType === "entrada" ? inputValue : -inputValue,
 				type: inputType,
 			},
 		]);
