@@ -1,0 +1,57 @@
+.home_page {
+	width: 100vw;
+	height: 100vh;
+	background: #212529;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+}
+
+.home_content {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.home_content > img {
+	width: 123px;
+	height: 20px;
+}
+
+.home_content > h1 {
+	width: 347px;
+	height: 144px;
+	font-weight: 800;
+	font-size: 38px;
+	line-height: 48px;
+
+	/* or 126% */
+
+	color: #ffffff;
+}
+
+.home_content > p {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 26px;
+
+	/* identical to box height, or 162% */
+
+	color: #ffffff;
+}
+
+.home_content > button {
+	width: 241px;
+	height: 48px;
+	background: #fd377e;
+
+	/* color-primary */
+	border: 2px solid #fd377e;
+	border-radius: 8px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+
+	color: #ffffff;
+}
