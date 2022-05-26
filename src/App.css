@@ -23,9 +23,10 @@ header {
 main {
 	margin-top: 39px;
 	display: flex;
-	width: 900px;
+	width: 1000px;
 	height: 800px;
 	outline: 1px solid black;
+	gap: 60px;
 }
 
 .main_general_info {
