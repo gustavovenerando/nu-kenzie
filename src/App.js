@@ -9,6 +9,19 @@ import Home from "./components/Home/Home.js";
 function App() {
 	const [listTransactions, setListTransactions] = useState([]);
 	const [appPageStatus, setAppPageStatus] = useState(false);
+	const [filterList, setFilterList] = useState([]);
+
+	const filterEvent = (filterName) => {
+		if (filterName === "todos") {
+			setFilterList(listTransactions);
+		} else {
+			setFilterList(
+				listTransactions.filter(
+					({ type }) => type.toLowerCase() === filterName
+				)
+			);
+		}
+	};
 
 	return appPageStatus ? (
 		<div className="App">
@@ -25,8 +38,12 @@ function App() {
 				</div>
 
 				<List
-					listTransactions={listTransactions}
+					listTransactions={
+						filterList.length === 0 ? listTransactions : filterList
+					}
 					setListTransactions={setListTransactions}
+					filterEvent={filterEvent}
+					originalListTransactions={listTransactions}
 				/>
 			</main>
 		</div>

@@ -22,8 +22,6 @@ function Form(props) {
 		]);
 
 		setContId(contId + 1);
-
-		// console.log(props.listTransactions);
 	};
 
 	return (

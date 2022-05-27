@@ -8,12 +8,14 @@ function List(props) {
 	const [allFilter, setAllFilter] = useState("selected");
 	const [incomeFilter, setIncomeFilter] = useState("");
 	const [expenditureFilter, setExpenditureFilter] = useState("");
-
-	const [filterList, setFilterList] = useState([...props.listTransactions]);
+	const [filterSelected, setFilterSelected] = useState("todos");
 
 	const handleFilterIncome = (event) => {
 		event.preventDefault();
 		const filterName = event.target.name.toLowerCase();
+		setFilterSelected(filterName);
+
+		props.filterEvent(filterName);
 
 		if (filterName === "todos") {
 			setAllFilter("selected");
@@ -27,20 +29,6 @@ function List(props) {
 			setAllFilter("");
 			setIncomeFilter("");
 			setExpenditureFilter("selected");
-		}
-
-		// console.log(filterName);
-		// console.log(filterList);
-
-		if (filterName === "todos") {
-			setFilterList([...props.listTransactions]);
-		} else {
-			// setFilterList([...props.listTransactions]);
-			setFilterList(
-				props.listTransactions.filter(
-					({ type }) => type.toLowerCase() === filterName
-				)
-			);
 		}
 	};
 
@@ -84,13 +72,22 @@ function List(props) {
 						<p>Voce ainda não possui nenhum lançamento</p>
 						<img src={noCard} />
 					</div>
+				) : filterSelected === "todos" ? (
+					props.originalListTransactions.map((card, index) => (
+						<Card
+							card={card}
+							key={index}
+							setListTransactions={props.setListTransactions}
+							listTransactions={props.originalListTransactions}
+						/>
+					))
 				) : (
 					props.listTransactions.map((card, index) => (
 						<Card
 							card={card}
 							key={index}
 							setListTransactions={props.setListTransactions}
-							listTransactions={props.listTransactions}
+							listTransactions={props.originalListTransactions}
 						/>
 					))
 				)}

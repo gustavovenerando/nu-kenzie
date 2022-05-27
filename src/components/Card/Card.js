@@ -11,7 +11,6 @@ function Card(props) {
 		event.preventDefault();
 
 		const liId = event.target.closest("li").id;
-		console.log(event.target.closest("li"));
 
 		props.setListTransactions(
 			props.listTransactions.filter(
