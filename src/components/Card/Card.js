@@ -1,4 +1,5 @@
 import imagem from "./Images/trash.png";
+import whiteTrash from "./Images/whiteTrash.png";
 import "../../reset.css";
 import "./card.css";
 
@@ -30,6 +31,7 @@ function Card(props) {
 				<p>R$ {Number(props.card.value).toFixed(2)}</p>
 				<button onClick={handleRemove} className="remove_button">
 					<img src={imagem} />
+					<img src={whiteTrash} />
 				</button>
 			</div>
 		</li>

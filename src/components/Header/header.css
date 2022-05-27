@@ -14,4 +14,22 @@
 .header_container > button {
 	height: 40px;
 	width: 64px;
+	background: #e9ecef;
+	border: 1.4px solid #e9ecef;
+	border-radius: 8px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 19px;
+	color: #5b6166;
+}
+
+.header_container > button:hover {
+	background: #5b6166;
+	color: #f8f9fa;
+}
+
+.header_container > button:focus {
+	background: #fd377e;
+	color: #ffffff;
+	border: 1.4px solid #5b6166;
 }

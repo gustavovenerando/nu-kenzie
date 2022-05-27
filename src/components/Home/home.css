@@ -55,3 +55,8 @@
 
 	color: #ffffff;
 }
+
+.home_content > button:hover {
+	background: #e34981;
+	color: #f8f9fa;
+}

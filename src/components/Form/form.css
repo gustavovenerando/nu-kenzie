@@ -97,6 +97,16 @@ form > p {
 	height: 48px;
 }
 
+.type_value_conteiner > select:hover,
+.type_value_conteiner > select:focus {
+	outline: 1.2px solid #212529;
+}
+
+input:hover,
+input:focus {
+	outline: 1.5px solid #212529;
+}
+
 form > button {
 	width: 314px;
 	height: 48px;
@@ -109,4 +119,10 @@ form > button {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 19px;
+}
+
+form > button:hover {
+	background: #e34981;
+	border: 2px solid #e34981;
+	color: #f8f9fa;
 }

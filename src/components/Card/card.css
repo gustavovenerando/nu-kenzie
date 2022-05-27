@@ -57,4 +57,24 @@
 	margin-top: 10px;
 	width: 22px;
 	height: 22px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2.46154px;
+}
+
+.card_content > button:hover {
+	background: #5b6166;
+}
+
+button img:last-child {
+	display: none;
+}
+
+button:hover img:last-child {
+	display: block;
+}
+
+button:hover img:first-child {
+	display: none;
 }
