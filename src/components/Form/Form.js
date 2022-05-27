@@ -23,7 +23,15 @@ function Form(props) {
 
 		setContId(contId + 1);
 
-		console.log(props.listTransactions);
+		if (props.selectedFilter === "todos") {
+			props.setFilterList([...props.listTransactions]);
+		} else {
+			props.setFilterList(
+				props.listTransactions.filter(
+					({ type }) => type.toLowerCase() === props.selectedFilter
+				)
+			);
+		}
 	};
 
 	return (

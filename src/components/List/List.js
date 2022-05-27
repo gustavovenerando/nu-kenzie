@@ -5,20 +5,20 @@ import Card from "../Card/Card.js";
 import { useState } from "react";
 
 function List(props) {
-	// const [filterList, setFilterList] = useState([...props.listTransactions]);
+	// const [filterList, setFilterList] = useState([]);
+	// const [initialList, setinitialList] = useState([]);
 
-	// const handleFilterIncome = (event) => {
+	// const handleFilter = (event) => {
 	// 	event.preventDefault();
 	// 	const filterName = event.target.name.toLowerCase();
 	// 	// console.log(filterName);
 	// 	// console.log(filterList);
 
 	// 	if (filterName === "todos") {
-	// 		setFilterList([...props.listTransactions]);
+	// 		props.setFilterList([...props.originalListTransactions]);
 	// 	} else {
-	// 		// setFilterList([...props.listTransactions]);
-	// 		setFilterList(
-	// 			filterList.filter(
+	// 		props.setFilterList(
+	// 			props.originalListTransactions.filter(
 	// 				({ type }) => type.toLowerCase() === filterName
 	// 			)
 	// 		);
@@ -31,13 +31,19 @@ function List(props) {
 				<h2>Resumo financeiro</h2>
 				<ul className="filter_conteiner">
 					<li>
-						<button name="todos">Todos</button>
+						<button name="todos" onClick={props.handleFilter}>
+							Todos
+						</button>
 					</li>
 					<li>
-						<button name="entrada">Entradas</button>
+						<button name="entrada" onClick={props.handleFilter}>
+							Entradas
+						</button>
 					</li>
 					<li>
-						<button name="despesa">Despesas</button>
+						<button name="despesa" onClick={props.handleFilter}>
+							Despesas
+						</button>
 					</li>
 				</ul>
 			</div>
@@ -53,7 +59,7 @@ function List(props) {
 							card={card}
 							key={index}
 							setListTransactions={props.setListTransactions}
-							listTransactions={props.listTransactions}
+							listTransactions={props.originalListTransactions}
 						/>
 					))
 				)}
