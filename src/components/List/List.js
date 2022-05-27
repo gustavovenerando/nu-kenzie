@@ -5,25 +5,44 @@ import Card from "../Card/Card.js";
 import { useState } from "react";
 
 function List(props) {
-	// const [filterList, setFilterList] = useState([]);
-	// const [initialList, setinitialList] = useState([]);
+	const [allFilter, setAllFilter] = useState("selected");
+	const [incomeFilter, setIncomeFilter] = useState("");
+	const [expenditureFilter, setExpenditureFilter] = useState("");
 
-	// const handleFilter = (event) => {
-	// 	event.preventDefault();
-	// 	const filterName = event.target.name.toLowerCase();
-	// 	// console.log(filterName);
-	// 	// console.log(filterList);
+	const [filterList, setFilterList] = useState([...props.listTransactions]);
 
-	// 	if (filterName === "todos") {
-	// 		props.setFilterList([...props.originalListTransactions]);
-	// 	} else {
-	// 		props.setFilterList(
-	// 			props.originalListTransactions.filter(
-	// 				({ type }) => type.toLowerCase() === filterName
-	// 			)
-	// 		);
-	// 	}
-	// };
+	const handleFilterIncome = (event) => {
+		event.preventDefault();
+		const filterName = event.target.name.toLowerCase();
+
+		if (filterName === "todos") {
+			setAllFilter("selected");
+			setIncomeFilter("");
+			setExpenditureFilter("");
+		} else if (filterName === "entrada") {
+			setAllFilter("");
+			setIncomeFilter("selected");
+			setExpenditureFilter("");
+		} else {
+			setAllFilter("");
+			setIncomeFilter("");
+			setExpenditureFilter("selected");
+		}
+
+		// console.log(filterName);
+		// console.log(filterList);
+
+		if (filterName === "todos") {
+			setFilterList([...props.listTransactions]);
+		} else {
+			// setFilterList([...props.listTransactions]);
+			setFilterList(
+				props.listTransactions.filter(
+					({ type }) => type.toLowerCase() === filterName
+				)
+			);
+		}
+	};
 
 	return (
 		<div className="list_conteiner">
@@ -31,17 +50,29 @@ function List(props) {
 				<h2>Resumo financeiro</h2>
 				<ul className="filter_conteiner">
 					<li>
-						<button name="todos" onClick={props.handleFilter}>
+						<button
+							className={allFilter}
+							name="todos"
+							onClick={handleFilterIncome}
+						>
 							Todos
 						</button>
 					</li>
 					<li>
-						<button name="entrada" onClick={props.handleFilter}>
+						<button
+							className={incomeFilter}
+							name="entrada"
+							onClick={handleFilterIncome}
+						>
 							Entradas
 						</button>
 					</li>
 					<li>
-						<button name="despesa" onClick={props.handleFilter}>
+						<button
+							className={expenditureFilter}
+							name="despesa"
+							onClick={handleFilterIncome}
+						>
 							Despesas
 						</button>
 					</li>
@@ -59,7 +90,7 @@ function List(props) {
 							card={card}
 							key={index}
 							setListTransactions={props.setListTransactions}
-							listTransactions={props.originalListTransactions}
+							listTransactions={props.listTransactions}
 						/>
 					))
 				)}
