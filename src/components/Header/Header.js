@@ -5,7 +5,9 @@ function Header(props) {
 	return (
 		<div className="header_container">
 			<img src={logo} />
-			<button>Inicio</button>
+			<button onClick={() => props.setAppPageStatus(false)}>
+				Inicio
+			</button>
 		</div>
 	);
 }

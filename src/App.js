@@ -4,14 +4,16 @@ import Header from "./components/Header/Header.js";
 import Form from "./components/Form/Form.js";
 import TotalMoney from "./components/TotalMoney/TotalMoney.js";
 import List from "./components/List/List.js";
+import Home from "./components/Home/Home.js";
 
 function App() {
 	const [listTransactions, setListTransactions] = useState([]);
+	const [appPageStatus, setAppPageStatus] = useState(false);
 
-	return (
+	return appPageStatus ? (
 		<div className="App">
 			<header>
-				<Header />
+				<Header setAppPageStatus={setAppPageStatus} />
 			</header>
 			<main>
 				<div className="main_general_info">
@@ -28,6 +30,8 @@ function App() {
 				/>
 			</main>
 		</div>
+	) : (
+		<Home setAppPageStatus={setAppPageStatus} />
 	);
 }
 
