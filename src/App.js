@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header/Header.js";
 import Form from "./components/Form/Form.js";
 import TotalMoney from "./components/TotalMoney/TotalMoney.js";
@@ -38,9 +38,7 @@ function App() {
 				</div>
 
 				<List
-					listTransactions={
-						filterList.length === 0 ? listTransactions : filterList
-					}
+					listTransactions={filterList}
 					setListTransactions={setListTransactions}
 					filterEvent={filterEvent}
 					originalListTransactions={listTransactions}

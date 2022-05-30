@@ -2,13 +2,17 @@ import noCard from "./Images/NoCard.png";
 import "../../reset.css";
 import "./list.css";
 import Card from "../Card/Card.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function List(props) {
 	const [allFilter, setAllFilter] = useState("selected");
 	const [incomeFilter, setIncomeFilter] = useState("");
 	const [expenditureFilter, setExpenditureFilter] = useState("");
 	const [filterSelected, setFilterSelected] = useState("todos");
+
+	useEffect(() => {
+		props.filterEvent(filterSelected);
+	}, [props.filterEvent]);
 
 	const handleFilterIncome = (event) => {
 		event.preventDefault();
@@ -69,18 +73,9 @@ function List(props) {
 			<ul className="card_conteiner">
 				{props.listTransactions.length === 0 ? (
 					<div className="noCard">
-						<p>Voce ainda não possui nenhum lançamento</p>
+						<p>Voce não possui nenhum lançamento</p>
 						<img src={noCard} />
 					</div>
-				) : filterSelected === "todos" ? (
-					props.originalListTransactions.map((card, index) => (
-						<Card
-							card={card}
-							key={index}
-							setListTransactions={props.setListTransactions}
-							listTransactions={props.originalListTransactions}
-						/>
-					))
 				) : (
 					props.listTransactions.map((card, index) => (
 						<Card
