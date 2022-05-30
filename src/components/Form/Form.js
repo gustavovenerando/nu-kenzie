@@ -5,12 +5,18 @@ import { useState } from "react";
 function Form(props) {
 	const [inputDescription, setInputDescription] = useState("");
 	const [inputValue, setInputValue] = useState("");
-	const [inputType, setInputType] = useState("");
+	const [inputType, setInputType] = useState("Entrada");
 	const [contId, setContId] = useState(0);
 
 	const handleEventClick = (event) => {
 		event.preventDefault();
 
+		console.log(inputValue);
+
+		if (inputValue < 0) {
+			alert("Nao é possivel inserir valor negativo");
+			return null;
+		}
 		props.setListTransactions([
 			...props.listTransactions,
 			{
@@ -45,9 +51,10 @@ function Form(props) {
 					<select
 						// value="empty"
 						id="value_type"
+						defaultValue="Entrada"
 						onChange={(event) => setInputType(event.target.value)}
 					>
-						<option value="empty"></option>
+						{/* <option value="empty"></option> */}
 						<option value="Entrada">Entrada</option>
 						<option value="Despesa">Despesa</option>
 					</select>
