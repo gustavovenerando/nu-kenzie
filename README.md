@@ -1,4 +1,4 @@
-Acessar aplicação pelo link do Vercel: https://vercel.com/gustavovenerando/react-entrega-s1-nu-kenzie-gustavovenerando/49zw2JMSm7myk6yTHdTauMGVVtD1
+Acessar aplicação pelo link do Vercel: https://react-entrega-s1-nu-kenzie-gustavovenerando-fqt426xgh.vercel.app/
 
 # Getting Started with Create React App
 
