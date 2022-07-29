@@ -1,3 +1,5 @@
+Acessar aplicação pelo link do Vercel: https://vercel.com/gustavovenerando/react-entrega-s1-nu-kenzie-gustavovenerando/49zw2JMSm7myk6yTHdTauMGVVtD1
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
